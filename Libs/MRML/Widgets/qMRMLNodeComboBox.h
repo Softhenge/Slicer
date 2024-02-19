@@ -322,6 +322,15 @@ public slots:
   /// \sa vtkMRMLNode::GetName(), vtkMRMLNode::SetName()
   virtual void renameCurrentNode();
 
+  /// \brief Creates a specified node type
+  virtual void createNodeAs(const QString& nodeTypeName);
+
+  /// Retrieves a name from a dialog box input.
+  /// \param dialogTitle Title of the dialog box.
+  /// \param defaultName Default name to display in the input field.
+  /// \param ok Pointer to a boolean variable to indicate if the operation was successful.
+  virtual QString getNameFromDialog(const QString& dialogTitle, const QString& defaultName, bool* ok);
+
 signals:
   /// This signal is sent anytime the current node is changed. nullptr if
   /// no node is current or the current item is "None".
